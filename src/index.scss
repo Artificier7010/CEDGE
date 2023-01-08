@@ -1,0 +1,107 @@
+:root {
+    --main-color: #ff9ef2;
+    --secondary-color:rgb(186, 88, 255);
+    --main-font:'Josefin Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: var(--main-font);
+}
+
+// UTILITIES
+// ===================
+
+.big-btns-theme1{
+    max-width: 400px;
+    height: 80px;
+    border: none;
+    outline: none;
+    background: var(--main-color);
+    font-size: large;
+    font-weight: 700;
+    border-radius: 10px;
+    position: relative;
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+
+    &::before{
+        content: "";
+        width: 50px;
+        height: 120%;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        background: rgba(255, 255, 255, 0.385);
+        transform: skewX(-45deg);
+        animation: buttonflash 1s 1s infinite alternate ease-in-out;
+
+
+    }
+
+    
+
+    &:hover{
+        background: var(--secondary-color);
+        transition: 0.5s ease;
+    }
+
+}
+
+.big-btns-theme2{
+    max-width: 400px;
+    height: 80px;
+    border: none;
+    outline: none;
+    background: var(--main-color);
+    font-size: large;
+    font-weight: 700;
+    border-radius: 10px;
+    position: relative;
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+
+    &::before{
+        content: "";
+        width: 50px;
+        height: 120%;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        background: rgba(255, 255, 255, 0.256);
+        transform: skewX(-45deg);
+        animation: buttonflash 1s 1.5s infinite alternate ease-in-out;
+    }
+
+    
+
+    &:hover{
+        background: var(--secondary-color);
+        transition: 0.5s ease;
+    }
+
+}
+
+
+
+@keyframes buttonflash {
+    0%{
+        left: 120%;
+
+
+    }
+    100%{
+        left: -100%;
+    }
+    
+}

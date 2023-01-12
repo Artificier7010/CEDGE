@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.scss';
 import btnsanim from '../../Assets/Images/btnsanim.gif';
+import logo from '../../Assets/Images/logo.png';
 
 const Navbar = (props) => {
 
@@ -12,7 +13,8 @@ const Navbar = (props) => {
             {/* LEFT PART */}
             <div className="nav-left">
                 <div className="logo">
-                    <h1>CREATIVE EDGE</h1>
+                    {/* <h1>CREATIVE EDGE</h1> */}
+                    <img src={logo} alt="logo" style={{width:"200px"}} />
                 </div>
 
                 <ul className="menus">

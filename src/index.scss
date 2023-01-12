@@ -1,7 +1,7 @@
 :root {
     --main-color: #ff9ef2;
-    --secondary-color:rgb(186, 88, 255);
-    --main-font:'Josefin Sans', sans-serif;
+    --secondary-color: rgb(186, 88, 255);
+    --main-font: 'Josefin Sans', sans-serif;
 }
 
 * {
@@ -13,14 +13,14 @@
 body {
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    // overflow: hidden;
     font-family: var(--main-font);
 }
 
 // UTILITIES
 // ===================
 
-.big-btns-theme1{
+.big-btns-theme1 {
     max-width: 400px;
     height: 80px;
     border: none;
@@ -34,7 +34,7 @@ body {
     cursor: pointer;
     overflow: hidden;
 
-    &::before{
+    &::before {
         content: "";
         width: 50px;
         height: 120%;
@@ -48,30 +48,30 @@ body {
 
     }
 
-    
 
-    &:hover{
+
+    &:hover {
         background: var(--secondary-color);
         transition: 0.5s ease;
     }
 
 }
 
-.big-btns-theme2{
+.big-btns-theme2 {
     max-width: 400px;
     height: 80px;
     border: none;
     outline: none;
-    background: var(--main-color);
+    background: rgba(223, 255, 82, 0.967);
     font-size: large;
     font-weight: 700;
     border-radius: 10px;
     position: relative;
-    color: white;
+    color: rgb(48, 46, 46);
     cursor: pointer;
     overflow: hidden;
 
-    &::before{
+    &::before {
         content: "";
         width: 50px;
         height: 120%;
@@ -83,25 +83,85 @@ body {
         animation: buttonflash 1s 1.5s infinite alternate ease-in-out;
     }
 
-    
 
-    &:hover{
-        background: var(--secondary-color);
+
+    &:hover {
+        background: rgb(239, 255, 13);
         transition: 0.5s ease;
     }
 
 }
 
+.small-btns {
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 25px;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 6px 16px;
+    transition: 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .myicon{
+        animation: lfttr 1s infinite alternate-reverse ease !important;
+    }
+
+    &:hover {
+        border: 2px solid yellow;
+        color: yellow;
+        transition: 0.5s ease;
+    }
+}
+
+.main-heading{
+    h1{
+        font-size: 3em;
+    }
+    .highlighted{
+        color: var(--secondary-color);
+    }
+    h4{
+        font-size: 1vw;
+    }
+}
+
 
 
 @keyframes buttonflash {
-    0%{
+    0% {
         left: 120%;
 
 
     }
-    100%{
+
+    100% {
         left: -100%;
+    }
+
+}
+
+@keyframes lfttr {
+    0%{
+        translate: -10px 0 0;
+    }
+    100%{
+        translate: 10px 0 0;
+    }
+    
+}
+
+@media screen and (max-width:1025px) {
+
+    
+}
+@media screen and (max-width:990px) {
+    .main-heading{
+        h1{
+            font-size: 35px;
+            color: rgb(128, 128, 128);
+        }
     }
     
 }

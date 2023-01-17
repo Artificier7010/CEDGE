@@ -2,83 +2,15 @@ import React from 'react';
 import Mycarousel from '../../Components/Carousel/Mycarousel';
 import Navbar from '../../Components/Navbar/Navbar';
 import './homepage.scss';
-import img1 from '../../Assets/Images/dance.jpg';
-import img2 from '../../Assets/Images/dMOTION-2015_webpage-banner_756_2.jpg';
+import { Addata, danceStylesData, instructorsData } from '../../Dummydata/Dummy';
+import Instcarouse from '../../Components/InstructorCarouse/Instcarouse';
 
-const Homepage = () => {
-    // let data=[]
-    let data = [
-        {
-            heading: "The Training pro",
-            subheading: "Experience full-body workouts featuring the hottest songs, hype instructors, and dance moves you’d actually do IRL.",
-            img: img1
-        },
-        {
-            heading: "Start With The Basics",
-            subheading: "No rhythm? No confidence? No clue where to start? Take our top rated “Intro to Dance” program alongside over 200,000 other new dancers",
-            img: img2
-        },
-        {
-            heading: "Start bc hello",
-            subheading: "No rhythm? No confidence? No clue where to start? Take our top rated “Intro to Dance” program alongside over 200,000 other new dancers",
-            img: ""
-        },
-        {
-            heading: "Start With The Basics",
-            subheading: "No rhythm? No confidence? No clue where to start? Take our top rated “Intro to Dance” program alongside over 200,000 other new dancers",
-        },
-    ]
+const Homepage = (props) => {
 
-    const danceStyles = [
-        {
-            name: "Hip Hop",
-            background: "https://ik.imagekit.io/dexo68yudb/download.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1673548070347"
-        },
-        {
-            name: "Contemporary",
-            background: "https://ik.imagekit.io/dexo68yudb/Lord_Byron.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1673548131701"
-        },
-        {
-            name: "Workout",
-            background: "https://ik.imagekit.io/dexo68yudb/download__1_.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1673548243024"
-        },
-        {
-            name: "K-Pop",
-            background: "https://ik.imagekit.io/dexo68yudb/__NAME__.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1673548401476"
-        },
-        {
-            name: "Ballet",
-            background: "https://ik.imagekit.io/dexo68yudb/download__2_.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1673548466088"
-        },
-        {
-            name: "Salsa",
-            background: "https://ik.imagekit.io/dexo68yudb/image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1673548584369"
-        },
-        {
-            name: "Popping",
-            background: "https://ik.imagekit.io/dexo68yudb/image__1_.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1673548754384"
-        },
-        {
-            name: "Jazz",
-            background: "https://ik.imagekit.io/dexo68yudb/image__2_.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1673548939819"
-        },
-        {
-            name: "Lite Feet",
-            background: "https://ik.imagekit.io/dexo68yudb/image__3_.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1673549137499"
-        },
-        {
-            name: "Heels",
-            background: "https://ik.imagekit.io/dexo68yudb/Heels_class__top_Babi_Beluco_testa_aula_de_dan%C3%A7a_com_salto_alto__hit_da_vez.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1673549260774"
-        },
-        {
-            name: "House",
-            background: "https://ik.imagekit.io/dexo68yudb/Cvb.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1673546450175"
-        },
-        {
-            name: "Locking",
-            background: "https://ik.imagekit.io/dexo68yudb/Mq21.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1673546765482"
-        },
-    ]
+// STATIC DATA FETCHING
+    let data = Addata;
+    const danceStyles = danceStylesData;
+    const instructors=instructorsData;
     return (
         <div className="Homepage">
 
@@ -89,7 +21,8 @@ const Homepage = () => {
                 <div className="section-wrapper">
                     {/* Navbar */}
                     <Navbar
-                        isLogedIn={false}
+                        isLogedIn={true}
+                        windowSize={props.windowSize.length > 0 && props.windowSize ? props.windowSize : undefined}
                     />
 
                     {/* Section 1 */}
@@ -149,6 +82,27 @@ const Homepage = () => {
                         </div>
 
 
+                    </div>
+
+                    {/* Section 4 */}
+                    <div className="home-section4">
+                        <div className="main-heading">
+                            <h1>Meet <span className='highlighted'>Our</span> Instructors</h1>
+                            <h4><span className='highlighted'>Creative Edge</span> boasts a team of highly respected and accomplished dance instructors in the industry.</h4>
+                        </div>
+
+                        <div className="instructors-section">
+                            <div className="instr-left">
+                                <h4>Recognized for their expertise in imparting world-class dance techniques and choreography. Whether you prefer group or private instruction, their guidance will enable you to master the art of dance and perform with confidence.</h4>
+                            </div>
+                            <div className="instr-right">
+                                <Instcarouse
+                                instructorsData={instructors? instructors:[]}
+                                windowSize={props.windowSize.length > 0 && props.windowSize ? props.windowSize : undefined}
+                                />
+                            </div>
+
+                        </div>
                     </div>
                 </div>
 

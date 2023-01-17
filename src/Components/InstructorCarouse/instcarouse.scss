@@ -1,0 +1,44 @@
+.instcarouse-card{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    // border: 3px solid var(--main-color);
+    .inst-prof-img{
+        width: 390px;
+        height: 505px;
+        position: relative;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .black-overlay{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+            background: linear-gradient(to top,rgba(0, 0, 0, 0.819),rgba(0, 0, 0, 0.682),rgba(0, 0, 0, 0.447),rgba(0, 0, 0, 0.233),rgba(0, 0, 0, 0.118));
+            z-index: 1;
+            padding: 25px;
+            h3{
+                font-size: 25px;
+                color: rgba(255, 255, 255, 0.652);
+            }
+            h4{
+                color: rgba(255, 255, 255, 0.652);
+            }
+        }
+
+    }
+}

@@ -1,12 +1,29 @@
 import './App.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from './Pages/Homepage/Homepage';
+import { useEffect, useState } from 'react';
+
 
 function App() {
+  const [windowSize, setWindowSize] = useState([
+    window.innerWidth,
+    window.innerHeight,
+  ]);
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowSize([window.innerWidth, window.innerHeight]);
+    };
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  });
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Homepage/>}/>
+        <Route path='/' element={<Homepage windowSize={windowSize} />} />
       </Routes>
     </Router>
   );

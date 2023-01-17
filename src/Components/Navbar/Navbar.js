@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.scss';
 import btnsanim from '../../Assets/Images/btnsanim.gif';
-import logo from '../../Assets/Images/logo.png';
+import iconlogo from '../../Assets/Images/smallicon.png';
+
 
 const Navbar = (props) => {
 
@@ -13,16 +14,18 @@ const Navbar = (props) => {
             {/* LEFT PART */}
             <div className="nav-left">
                 <div className="logo">
-                    {/* <h1>CREATIVE EDGE</h1> */}
-                    <img src={logo} alt="logo" style={{width:"200px"}} />
+                    <h1>CREATIVE EDGE</h1>
+                    {/* <img src={logo} alt="logo" style={{ width: "200px"}} /> */}
                 </div>
+                {props.windowSize[0] <= 991 ? null : (
+                    <ul className="menus">
+                        <li><Link to={"#"} >ABOUT</Link></li>
+                        <li><Link>STYLES</Link></li>
+                        <li><Link>FEATURE</Link></li>
+                        <li><Link>PRICING</Link></li>
+                    </ul>
+                )}
 
-                <ul className="menus">
-                    <li><Link to={"#"} >ABOUT</Link></li>
-                    <li><Link>STYLES</Link></li>
-                    <li><Link>FEATURE</Link></li>
-                    <li><Link>PRICING</Link></li>
-                </ul>
             </div>
 
             {/* RIGHT PART */}
@@ -50,6 +53,25 @@ const Navbar = (props) => {
                         <button>JOIN US</button>
                     </div>
                 )}
+            </div>
+
+            {/* RIGHT PART FOR MOBILE */}
+            <div className="nav-right-mob">
+                <div className="flip-inner-wrapper">
+                    <div className="flip-front">
+                        <img src={iconlogo} alt="smallico" style={{ width: "60px" }} />
+                    </div>
+                    <div className="flip-back">
+                        <a  href="https://www.amazon.in">
+                            <span class="material-symbols-outlined">
+                                storefront
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+
+
             </div>
         </div>
     )

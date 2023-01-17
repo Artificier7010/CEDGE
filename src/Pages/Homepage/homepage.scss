@@ -141,7 +141,7 @@
                         justify-content: center;
                         align-items: center;
                         gap: 15px;
-                        padding: 10px;
+                        padding: 25px;
 
                         .styles-card {
                             height: 240px;
@@ -154,14 +154,8 @@
                             transition: 0.5s ease;
                             cursor: pointer;
 
-
-                            &:hover {
-                                scale: 1.02;
-                                transition: 0.5s ease;
-                            }
-
                             &:hover .card-img img {
-                                scale: 1.5;
+                                scale: 1.3;
                                 transition: 0.5s ease;
                             }
 
@@ -182,23 +176,80 @@
                             .card-desc {
                                 width: 100%;
                                 height: 40px;
-                                background: white;
                                 position: absolute;
                                 left: 0;
                                 bottom: 0;
                                 display: flex;
                                 align-items: center;
                                 justify-content: flex-end;
-                                border-top-left-radius: 15px;
+                                border-top-left-radius: 44px;
                                 padding: 0 15px;
 
                                 h2 {
-                                    font-size: 2vw;
+                                    font-size: 3vw;
                                     text-align: center;
+                                    color: rgba(240, 248, 255, 0.737);
 
                                 }
                             }
                         }
+                    }
+                }
+
+
+            }
+
+            // SECTION 4 STYLING
+            .home-section4{
+                width: 100%;
+                padding: 20px;
+
+                .instructors-section{
+                    box-sizing: border-box;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    background: black;
+                    align-items: center;
+                    min-height: 80vh;
+                    margin: 40px 0;
+                    padding: 10px;
+                    border-radius: 30px;
+                    position: relative;
+                    overflow: hidden;
+
+                    &::after{
+                        content: "";
+                        width: 50%;
+                        height:70%;
+                        background: rgba(209, 170, 255, 0.49);
+                        position: absolute;
+                        top: 50%;
+                        transform: translateX(-50%);
+                        border-radius: 25px;
+                        left: 0;
+                        z-index: 1;
+
+                    }
+                    .instr-left{
+                        width: 30%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 15px;
+                        z-index: 2;
+                        h4{
+                            text-align: left;
+                            font-size: 2vw;
+                            color: aliceblue;
+                        }
+                    }
+                    .instr-right{
+                        width: 70%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
                     }
                 }
 
@@ -236,6 +287,19 @@
                         }
                     }
                 }
+                .home-section4{
+                    padding: 20px 0;
+                    .instructors-section{
+                        flex-direction: column;
+                        .instr-left{
+                            width: 100%;
+                        }
+                        .instr-right{
+                            width: 100%;
+                        }
+                        
+                    }
+                }
             }
         }
     }
@@ -251,6 +315,34 @@
                     .dance-styles {
                         .dance-styles-wraper {
                             grid-template-columns: repeat(2, 180px);
+
+                            .styles-card {
+                                height: 180px;
+
+                                .card-desc {
+                                    h2 {
+                                        font-size: 20px;
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+@media screen and (max-width:991px ) and (min-width:600px) {
+    .Homepage {
+        .pageWrapper {
+            .section-wrapper {
+                .home-section3 {
+                    .dance-styles {
+                        .dance-styles-wraper {
+                            grid-template-columns: repeat(3, calc(100% / 3));
 
                             .styles-card {
                                 height: 180px;

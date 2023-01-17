@@ -2,7 +2,7 @@ import './App.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from './Pages/Homepage/Homepage';
 import { useEffect, useState } from 'react';
-
+import Signup from './Pages/Signuppage/Signup';
 
 function App() {
   const [windowSize, setWindowSize] = useState([
@@ -24,6 +24,7 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={<Homepage windowSize={windowSize} />} />
+        <Route path='/Signup' element={<Signup/>}/>
       </Routes>
     </Router>
   );

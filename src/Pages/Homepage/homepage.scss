@@ -249,6 +249,7 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
+                        z-index: 3;
 
                     }
                 }
@@ -291,8 +292,16 @@
                     padding: 20px 0;
                     .instructors-section{
                         flex-direction: column;
+                        &::after{
+                            left: 30%;
+                            width: 70%;
+                            
+                        }
                         .instr-left{
                             width: 100%;
+                            h4{
+                                font-size: 15px;
+                            }
                         }
                         .instr-right{
                             width: 100%;

@@ -1,16 +1,18 @@
 {
   "files": {
-    "main.css": "/Cedge/static/css/main.a8bbc36d.css",
-    "main.js": "/Cedge/static/js/main.c8abf758.js",
+    "main.css": "/Cedge/static/css/main.a8b3e9c1.css",
+    "main.js": "/Cedge/static/js/main.dbd4797e.js",
     "static/media/hip-hop-dance.gif": "/Cedge/static/media/hip-hop-dance.634090811f4d93beb598.gif",
+    "static/media/loginbg 1.png": "/Cedge/static/media/loginbg 1.7fb0a588067074145fec.png",
+    "static/media/smallicon.png": "/Cedge/static/media/smallicon.6a883b0b83389893a462.png",
     "static/media/dance.jpg": "/Cedge/static/media/dance.cca7ba42fc41f9a12928.jpg",
     "static/media/dMOTION-2015_webpage-banner_756_2.jpg": "/Cedge/static/media/dMOTION-2015_webpage-banner_756_2.c9074d4723f7fe99b3fa.jpg",
     "index.html": "/Cedge/index.html",
-    "main.a8bbc36d.css.map": "/Cedge/static/css/main.a8bbc36d.css.map",
-    "main.c8abf758.js.map": "/Cedge/static/js/main.c8abf758.js.map"
+    "main.a8b3e9c1.css.map": "/Cedge/static/css/main.a8b3e9c1.css.map",
+    "main.dbd4797e.js.map": "/Cedge/static/js/main.dbd4797e.js.map"
   },
   "entrypoints": [
-    "static/css/main.a8bbc36d.css",
-    "static/js/main.c8abf758.js"
+    "static/css/main.a8b3e9c1.css",
+    "static/js/main.dbd4797e.js"
   ]
 }

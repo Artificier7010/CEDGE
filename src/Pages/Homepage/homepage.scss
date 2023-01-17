@@ -69,13 +69,11 @@
 
             // SECTION 2 STYLING
 
-            .home-section2{
+            .home-section2 {
                 width: 100%;
-                height: 100vh;
-                // border: 1px solid;
-                padding: 20px 0;
+                padding-top: 20px;
 
-                .quote-banner{
+                .quote-banner {
                     width: 100%;
                     min-height: 100px;
                     border: 1px solid rgb(231, 231, 231);
@@ -84,14 +82,14 @@
                     display: flex;
                     flex-direction: column;
                     text-align: center;
-                    justify-content:center;
+                    justify-content: center;
                     padding: 20px;
                     align-items: center;
                     border-radius: 15px;
                     position: relative;
                     overflow: hidden;
 
-                    &::before{
+                    &::before {
                         content: '';
                         position: absolute;
                         top: -60%;
@@ -101,15 +99,16 @@
                         rotate: -45deg;
                         background: rgba(0, 0, 0, 0.049);
 
-            
+
 
                     }
 
-                    .bannr-quote{
+                    .bannr-quote {
                         font-size: 2em;
                         color: rgb(59, 59, 59);
                     }
-                    .quote-author{
+
+                    .quote-author {
                         margin: 10px 0;
                         color: rgb(193, 193, 193);
 
@@ -117,11 +116,93 @@
 
                 }
 
-                .promo-banner{
+                .promo-banner {
                     width: 100%;
-                    margin: 30px 0;
+                    margin-top: 30px;
 
                 }
+            }
+
+            // SECTION 3 STYLING
+
+            .home-section3 {
+                width: 100%;
+                min-height: 100vh;
+                // border: 1px solid;
+                padding-top: 20px;
+
+                .dance-styles {
+                    width: 100%;
+                    padding: 30px 0;
+
+                    .dance-styles-wraper {
+                        display: grid;
+                        grid-template-columns: repeat(4, calc(100% / 4));
+                        justify-content: center;
+                        align-items: center;
+                        gap: 15px;
+                        padding: 10px;
+
+                        .styles-card {
+                            height: 240px;
+                            background-color: rgba(255, 255, 255, 0.8);
+                            font-size: 30px;
+                            overflow: hidden;
+                            position: relative;
+                            border-radius: 20px;
+                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.647);
+                            transition: 0.5s ease;
+                            cursor: pointer;
+
+
+                            &:hover {
+                                scale: 1.02;
+                                transition: 0.5s ease;
+                            }
+
+                            &:hover .card-img img {
+                                scale: 1.5;
+                                transition: 0.5s ease;
+                            }
+
+                            .card-img {
+                                width: 100%;
+                                height: 100%;
+
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                    object-position: center;
+                                    transition: 0.5s ease;
+
+                                }
+                            }
+
+                            .card-desc {
+                                width: 100%;
+                                height: 40px;
+                                background: white;
+                                position: absolute;
+                                left: 0;
+                                bottom: 0;
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-end;
+                                border-top-left-radius: 15px;
+                                padding: 0 15px;
+
+                                h2 {
+                                    font-size: 2vw;
+                                    text-align: center;
+
+                                }
+                            }
+                        }
+                    }
+                }
+
+
             }
 
         }
@@ -133,4 +214,60 @@
 
 }
 
+@media screen and (max-width:1025px) {
+    .Homepage {
+        .pageWrapper {
+            .section-wrapper {
+                .home-section3 {
+                    .dance-styles {
+                        .dance-styles-wraper {
+                            grid-template-columns: repeat(3, calc(100% / 3));
 
+                            .styles-card {
+                                height: 200px;
+
+                                .card-desc {
+                                    h2 {
+                                        font-size: 20px;
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+@media screen and (max-width:990px) {
+    .Homepage {
+        .pageWrapper {
+            .section-wrapper {
+                .home-section3 {
+                    .dance-styles {
+                        .dance-styles-wraper {
+                            grid-template-columns: repeat(2, 180px);
+
+                            .styles-card {
+                                height: 180px;
+
+                                .card-desc {
+                                    h2 {
+                                        font-size: 20px;
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+}

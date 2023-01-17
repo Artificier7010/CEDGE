@@ -104,6 +104,11 @@ const Homepage = (props) => {
 
                         </div>
                     </div>
+
+                    {/* SECTION 5 */}
+                    <div className="home-section5">
+                        
+                    </div>
                 </div>
 
             </div>

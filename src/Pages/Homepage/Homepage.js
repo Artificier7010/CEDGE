@@ -7,10 +7,10 @@ import Instcarouse from '../../Components/InstructorCarouse/Instcarouse';
 
 const Homepage = (props) => {
 
-// STATIC DATA FETCHING
+    // STATIC DATA FETCHING
     let data = Addata;
     const danceStyles = danceStylesData;
-    const instructors=instructorsData;
+    const instructors = instructorsData;
     return (
         <div className="Homepage">
 
@@ -97,8 +97,8 @@ const Homepage = (props) => {
                             </div>
                             <div className="instr-right">
                                 <Instcarouse
-                                instructorsData={instructors? instructors:[]}
-                                windowSize={props.windowSize.length > 0 && props.windowSize ? props.windowSize : undefined}
+                                    instructorsData={instructors ? instructors : []}
+                                    windowSize={props.windowSize.length > 0 && props.windowSize ? props.windowSize : undefined}
                                 />
                             </div>
 
@@ -107,7 +107,53 @@ const Homepage = (props) => {
 
                     {/* SECTION 5 */}
                     <div className="home-section5">
-                        
+                        <div className="about-cedge-section">
+                            <h1>Make A <span className='highlighted-text'>Right</span> Step</h1>
+
+                            <div className="about-card-wrapper">
+                                {/* CARD 1 */}
+                                <div className="abt-card">
+                                    <div className="abt-card-icon">
+                                        <div className="icon-box">
+                                            <span class="material-symbols-outlined">live_tv</span>
+                                        </div>
+                                        <div className="icon-name">
+                                            <h2>Sessions</h2>
+                                        </div>
+                                    </div>
+                                    <div className="abt-card-description">
+                                        <p>Take a leap in your art by unlocking an extensive collection of dance choreography and basic covering the top mentors of india, All this for free</p>
+                                    </div>
+                                </div>
+                                {/* CARD 2 */}
+                                <div className="abt-card">
+                                    <div className="abt-card-icon">
+                                        <div className="icon-box">
+                                            <span class="material-symbols-outlined">query_stats</span>
+                                        </div>
+                                        <div className="icon-name">
+                                            <h2>Analysis</h2>
+                                        </div>
+                                    </div>
+                                    <div className="abt-card-description">
+                                        <p>Not just correct moves , get a detailed explanation of all the performance live or behind the screens, work upon your weak areas</p>
+                                    </div>
+                                </div>
+                                <div className="abt-card">
+                                    <div className="abt-card-icon">
+                                        <div className="icon-box">
+                                            <span class="material-symbols-outlined">magic_button</span>
+                                        </div>
+                                        <div className="icon-name">
+                                            <h2>Quality</h2>
+                                        </div>
+                                    </div>
+                                    <div className="abt-card-description">
+                                        <p>We belive that its not just enough to aim, you must hit your target. Thats why we bring the best quality courses to enhance your dance journey</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

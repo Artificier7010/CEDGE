@@ -1,0 +1,183 @@
+.Footer {
+    width: 100%;
+    height: 80vh;
+    background-color: black;
+    position: relative;
+    overflow: hidden;
+
+    .cut-edge-design {
+        width: 130%;
+        height: 173px;
+        background: white;
+        rotate: 354deg;
+        position: absolute;
+        top: -17%;
+        left: -10%;
+    }
+
+    .footer-container {
+        width: 100%;
+        margin-top: 172px;
+        margin-bottom: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+
+        .foot-cols {
+            width: calc(100% / 4);
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 50px;
+            color: white;
+
+            .logo {
+                color: aliceblue;
+            }
+
+            .cpy-right-wrap {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+
+                .cpy-rgt {
+                    font-size: 10px;
+                    color: gray;
+                }
+
+            }
+
+            .contact-sub {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 15px;
+                color: var(--secondary-color);
+
+                input {
+                    width: 100%;
+                    height: 40px;
+                    color: var(--secondary-color);
+                    font-size: 25px;
+                    font-weight: 500;
+                    background: transparent;
+                    border: none;
+                    outline: none;
+
+                    &::placeholder {
+                        color: gray;
+                        font-size: 25px;
+                        font-weight: 800;
+                    }
+                }
+
+                button {
+                    padding: 10px 25px;
+                    background: transparent;
+                    border: 2px solid white;
+                    border-radius: 5px;
+                    color: aliceblue;
+                    font-size: 15px;
+                    font-weight: 800;
+
+                    &:hover {
+                        border: 2px solid var(--secondary-color);
+                        color: var(--secondary-color);
+                    }
+                }
+
+            }
+
+            .foot-menu {
+                width: 100%;
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 15px;
+
+                li {
+                    a {
+                        text-decoration: none;
+                        font-size: 10px;
+                        color: rgb(197, 197, 197);
+                        width: 100%;
+                        height: 100%;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: white;
+                        }
+
+                        .icons {
+                            font-size: 30px;
+                        }
+                    }
+
+                }
+            }
+
+            .foot-menu-mobl {
+                width: 100%;
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 60px;
+
+                li {
+                    a {
+                        text-decoration: none;
+                        font-size: 10px;
+                        color: rgb(197, 197, 197);
+                        width: 100%;
+                        height: 100%;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: white;
+                        }
+
+                        .icons {
+                            font-size: 30px;
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+    }
+}
+
+@media screen and (max-width:1025px) {}
+
+@media screen and (max-width:990px) {
+    .Footer {
+        height: auto;
+
+        .footer-container {
+            align-items: flex-start;
+            flex-direction: column;
+
+            .foot-cols {
+                width: 100%;
+                height: auto;
+                padding: 25px 0;
+
+            }
+
+        }
+
+    }
+
+}
+
+@media screen and (max-width:991px) and (min-width:600px) {}

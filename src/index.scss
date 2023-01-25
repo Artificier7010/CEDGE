@@ -165,6 +165,21 @@ body {
 
 }
 
+.link-btns{
+    padding: 12px 17px;
+    background: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 800;
+
+    &:hover{
+        background: var(--main-color);
+        // color: black;
+    }
+
+}
+
 
 
 

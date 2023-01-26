@@ -24,7 +24,7 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={<Homepage windowSize={windowSize} />} />
-        <Route path='/Signup' element={<Signup/>}/>
+        <Route path='/Signup' element={<Signup windowSize={windowSize}/>}/>
       </Routes>
     </Router>
   );

@@ -1,34 +1,218 @@
 .Signup {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
+    padding: 30px;
+    background: url('https://ik.imagekit.io/ozjmghbyvp/HD-Dance-Backgrounds-For-Desktop.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1673952848060');
+
 
     .s-wrap {
         padding: 0;
         margin: 0;
         width: 100%;
-        height: 100vh;
         display: flex;
-        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 30px;
+        box-shadow: 0 0 10px rgb(252, 252, 252);
 
         .s-left {
-            width: 50%;
-            height: 100vh;
-            background-color: black;
-            background: url('../../Assets/Images/loginbg\ 1.png');
+            width: 60%;
+            height: 100%;
+            background: url('https://ik.imagekit.io/ozjmghbyvp/HD-Dance-Backgrounds-For-Desktop.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1673952848060');
             background-repeat: no-repeat;
             background-size: cover;
+            background-position: center;
+
+            .hone-nav-btn {
+                width: 70px;
+                position: relative;
+                top: 10%;
+                padding: 15px 6px;
+                background: rgba(255, 255, 255, 0.537);
+                border-bottom-right-radius: 30px;
+                border-top-right-radius: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover {
+                    background: white;
+                }
+
+                a {
+                    color: black;
+                }
+            }
 
         }
+
         .s-right {
-            width: 50%;
+            width: 40%;
             height: 100%;
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: white;
 
-            h1 {
-                font-size: 20px;
+            .login-frm-wrap {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                gap: 15px;
+
+                h1 {
+                    font-size: 3vw;
+                }
+
+                form {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    gap: 15px;
+
+                    .input-box {
+                        width: 60%;
+                        border: 1px solid rgba(128, 128, 128, 0.569);
+                        height: 40px;
+                        border-radius: 5px;
+                        overflow: hidden;
+
+                        input {
+                            width: 100%;
+                            height: 100%;
+                            border: none;
+                            outline: none;
+                            padding: 0 15px;
+                        }
+                    }
+
+                    .text1 {
+                        a {
+                            text-decoration: none;
+                            color: #4867aa;
+                        }
+                    }
+
+                    .btns-wrap {
+                        width: 60%;
+                        height: 30px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        button {
+                            width: 100%;
+                            height: 100%;
+                            background: rgba(239, 239, 239, 0.8);
+                            border: none;
+                            outline: none;
+                            border-radius: 4px;
+                        }
+                    }
+                }
+
+                .divider {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                }
+
+                .btns-wrap {
+                    width: 60%;
+                    height: 30px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    button {
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(239, 239, 239, 0.8);
+                        border: none;
+                        outline: none;
+                        border-radius: 4px;
+                        font-weight: 700;
+                        transition: 0.5s ease;
+
+                        &:hover {
+                            background: black;
+                            transition: 0.5s ease;
+                            color: white;
+                        }
+                    }
+                }
+
+                .text2 {
+                    a {
+                        text-decoration: none;
+                        color: #4867aa;
+                    }
+                }
+
+
             }
+
+
         }
     }
 }
+
+
+@media screen and (max-width:1025px) {}
+
+@media screen and (max-width:990px) {
+    .Signup {
+        padding: 15px;
+
+        .s-wrap {
+            background: transparent;
+
+            .s-left {
+                display: none;
+
+            }
+
+            .s-right {
+                width: 100%;
+                background: rgba(255, 255, 255, 0.882);
+
+                .login-frm-wrap {
+
+                    h1 {
+                        font-size: 40px;
+                    }
+
+                    form {
+                        .input-box {
+                            width: 80%;
+                        }
+
+                        .btns-wrap {
+                            width: 80%;
+                            height: 35px;
+                            box-shadow: 0 0 10px rgb(147, 147, 147);
+                        }
+                    }
+
+                    .btns-wrap {
+                        width: 80%;
+                        height: 35px;
+                        box-shadow: 0 0 10px rgb(147, 147, 147);
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+@media screen and (max-width:991px) and (min-width:600px) {}

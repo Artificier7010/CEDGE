@@ -21,7 +21,7 @@ function App() {
     };
   });
   return (
-    <Router>
+    <Router basename='/CEDGE'>
       <Routes>
         <Route path='/' element={<Homepage windowSize={windowSize} />} />
         <Route path='/Signup' element={<Signup windowSize={windowSize}/>}/>

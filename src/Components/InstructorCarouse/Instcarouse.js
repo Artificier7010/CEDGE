@@ -9,7 +9,7 @@ const Instcarouse = (props) => {
         <OwlCarousel className='owl-theme' nav navText={[
             "<div className='nav-left-btn'><span class=material-symbols-outlined>arrow_back_ios</span></div>",
             "<div className='nav-right-btn'><span class=material-symbols-outlined> arrow_forward_ios</span></div>"]}
-             autoplay={true} loop margin={8} items={props.windowSize[0] <=1025 ? 1 :3} dots={false}>
+             autoplay={true} loop margin={8} autoplaySpeed={3000} fallbackEasing items={props.windowSize[0] <=1025 ? 1 :3} dots={false}>
             {props.instructorsData.map((intruc, index) => {
                 return (
                     <div key={index} className="item instcarouse-card">

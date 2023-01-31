@@ -1,0 +1,26 @@
+.Priacy {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    .mainwrap {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+
+        .contentwrap {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+
+            .content {
+                padding: 30px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,28 @@
+.dummyform{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    form{
+        width: 90%;
+        padding: 200px;
+        flex-direction: column;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .row{
+            display: flex;
+            flex-direction: column;
+
+            input{
+                height: 40px;
+                border: 1px solid gray;
+                outline: none;
+                padding: 5px;
+            }
+        }
+    }
+}

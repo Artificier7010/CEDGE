@@ -20,7 +20,7 @@ const Navbar = (props) => {
                 {props.windowSize[0] <= 991 ? null : (
                     <ul className="menus">
                         <li><Link to={"#"} >ABOUT</Link></li>
-                        <li><Link>STYLES</Link></li>
+                        <li><Link to={"/register"}>STYLES</Link></li>
                         <li><Link>FEATURE</Link></li>
                         <li><Link>PRICING</Link></li>
                     </ul>

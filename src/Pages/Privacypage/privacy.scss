@@ -1,12 +1,15 @@
 .Privacy {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
+    overflow: hidden;
 
     .mainwrap {
         width: 100%;
         padding: 0 15px 0 15px;
         display: flex;
+        overflow: auto;
+        height: 100%;
         flex-direction: column;
 
         h2{

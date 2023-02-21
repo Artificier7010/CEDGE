@@ -6,6 +6,7 @@ import Privacy from './Pages/Privacypage/Privacy';
 import Terms from './Pages/Termspage/Terms';
 import Register from './Pages/Registerpage/Register';
 import Loginpage from './Pages/Loginpage/Loginpage';
+import Blog from './Pages/Blogpage/Blog';
 
 
 
@@ -33,6 +34,7 @@ function App() {
         <Route path='/Privacy' element={<Privacy windowSize={windowSize} />} />
         <Route path='/Terms' element={<Terms windowSize={windowSize} />} />
         <Route path='/Login' element={<Loginpage windowSize={windowSize} />} />
+        <Route path='/blog' element={<Blog windowSize={windowSize} />} />
       </Routes>
     </Router>
   );

@@ -1,0 +1,122 @@
+.Blog {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: rgb(255, 255, 255);
+
+    .blogwrap {
+        height: 100%;
+        overflow-x:hidden ;
+        overflow-y: auto;
+        width: 100%;
+
+        .firstsectio {
+            width: 100%;
+            height: 60vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .leftsection {
+                height: 100%;
+                width: 50%;
+                background: url("https://ik.imagekit.io/dexo68yudb/Hilty___Bosch.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1673810041281");
+                background-size: contain;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                background-position: center;
+            }
+
+            .rightsection {
+                height: 100%;
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                background-color: rgba(181, 0, 211, 1);
+                justify-content: center;
+                align-items: center;
+
+                .rightcontent {
+                    width: 45%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    // justify-content: space-evenly;
+                    span {
+                        color: white;
+                        font-size: 3vw;
+
+                    }
+
+                    button {
+                        color: aliceblue;
+                        text-decoration: none;
+                        font-size: 18px;
+                        border: 2px solid white;
+                        background: transparent;
+                        border-radius: 5px;
+                        padding: 6px 16px;
+                        transition: 0.5s ease;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+
+
+            }
+        }
+
+        .secondsection {
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .postwrap{
+                width: 95%;
+
+            }
+        }
+
+        .thirdsection {
+            height: 20vh;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            color: white;
+            background-color: rgba(44, 44, 44, 1);
+            justify-content: space-evenly;
+
+            h3 {
+                font-size: 24px;
+            }
+
+            button {
+                background: transparent;
+                color: white;
+                border: 2px solid white;
+                background: transparent;
+                border-radius: 5px;
+                padding: 6px 16px;
+            }
+        }
+
+        .fourthsection {
+            padding: 15px;
+            height: 20vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            h3 {
+                font-size: 24px;
+                color: rgb(0, 0, 0);
+            }
+        }
+    }
+}

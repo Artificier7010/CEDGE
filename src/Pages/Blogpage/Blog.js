@@ -3,9 +3,20 @@ import './blog.scss'
 import Footer from '../../Components/Footer/Footer'
 import Blogcontent from '../../Components/Blogcomponents/BolgContent/Blogcontent'
 import Navbar from '../../Components/Navbar/Navbar'
+import { Link } from 'react-router-dom'
 
 const Blog = (props) => {
     let postdata = [
+        {
+            title: "Creative Edge is looking For the Mover",
+            category: "Dance",
+            link: ""
+        },
+        {
+            title: "Creative Edge is looking For the Mover",
+            category: "Dance",
+            link: ""
+        },
         {
             title: "Creative Edge is looking For the Mover",
             category: "Dance",
@@ -66,9 +77,7 @@ const Blog = (props) => {
                     </div>
                 </div>
 
-                {/* second navbar */}
 
-                <div className="secondnav"></div>
 
 
                 {/* second section */}
@@ -76,6 +85,19 @@ const Blog = (props) => {
                 <div className="secondsection">
 
                     <div className="postwrap">
+                        {/* second navbar */}
+
+                        <div className="secondnav">
+                            <div className="second-navwrap">
+                                <ul>
+                                    <li><Link to={'#'}>Choreography</Link></li>
+                                    <li><Link to={'#'}>Dancing</Link></li>
+                                    <li><Link to={'#'}>Breaking</Link></li>
+                                    <li><Link to={'#'}>Popping</Link></li>
+                                    <li><Link to={'#'}>Insider</Link></li>
+                                </ul>
+                            </div>
+                        </div>
                         <Blogcontent
                             heading={"Spot Light"}
                             postData={postdata}

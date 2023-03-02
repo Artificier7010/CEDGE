@@ -13,7 +13,7 @@
 
         .firstsectio {
             width: 100%;
-            height: 60vh;
+            height: 50vh;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -79,6 +79,27 @@
 
             .postwrap{
                 width: 95%;
+
+                .secondnav{
+                    width: 100%;
+                    border: 1px solid;
+                    margin: 100px 0;
+
+                    .second-navwrap{
+                        width: 100%;
+                        height: 100%;
+                        ul{
+                            width: 100%;
+                            height: 100%;
+                            padding: 10px 0;
+                            list-style: none;
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+
+                        }
+                    }
+                }
 
             }
         }

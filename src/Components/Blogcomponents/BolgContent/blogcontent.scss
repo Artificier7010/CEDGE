@@ -21,9 +21,9 @@
 
             .post-card {
                 height: 300px;
-                border-radius: 9px;
+                border-radius: 24px;
                 padding: 15px;
-                background: rgba(206, 94, 121, 1);
+                background: #7889E6;
                 position: relative;
 
                 &::before {
@@ -33,14 +33,15 @@
                     position: absolute;
                     top: 0;
                     left: 0;
-                    background: url("https://ik.imagekit.io/dexo68yudb/Lovepik_com-400368027-tapered-dot-shading__1_.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676822552077");
+                    background: url("https://ik.imagekit.io/dexo68yudb/Lovepik_com-400368027-tapered-dot-shading__1_.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677053841873");
                     background-size: cover;
                     background-position: center;
+                    opacity: 0.4;
                     z-index: 1;
                 }
 
                 &:nth-child(even) {
-                    background: rgba(37, 185, 0, 1);
+                    background: #CE5E79;
                 }
 
                 .cat-display,.title-display {

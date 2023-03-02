@@ -5,13 +5,12 @@ import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 
 const Register = (props) => {
-  const [formShuffle, setFormShuffle] = useState(1);
-  const [doReset,setDoReset]=useState(false);
+  const [formShuffle, setFormShuffle] = useState(0);
   const [eyeOpen, setEyeOpen] = useState(true);
   const [validationErrors, setValidationErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isDisabled, setIsDisabled] = useState(true);
-  const [chooseAmount, setChooseAmount] = useState(false);
+  const [confrmPass,setConfrmPass]=useState("");
   const [formData, setFormData] = useState({
     fullName: "",
     parentName: "",
@@ -23,16 +22,15 @@ const Register = (props) => {
     reach: "",
     classType: "",
     tandp: "",
+    username: "",
     email: "",
     password: "",
-    amount: ""
+    amount: "",
   })
 
 
-  const handleInputChange = (e) => {
+  const handleInputChange = async (e) => {
     const { name, value } = e.target;
-
-    console.log(name, ":", value);
 
     if (name === 'tandp') {
       setIsDisabled(!e.target.checked);
@@ -41,10 +39,13 @@ const Register = (props) => {
       setFormData((preval) => {
         return {
           ...preval,
-          amount: ""
+          amount: value >= 7 ? 1500 : 1000,
         }
-  
+
       })
+    }
+    if(name==="confmpass"){
+      setConfrmPass(value);
     }
 
     setFormData((preval) => {
@@ -86,7 +87,10 @@ const Register = (props) => {
     if (!data.dob) {
       errors.dob = 'Date Of Birth is required';
     }
-    if (!data.classType || data.classType==="") {
+    if (!data.username) {
+      errors.username = 'Username is required';
+    }
+    if (!data.classType || data.classType === "") {
       errors.classType = 'class Type is required';
     }
     if (!data.email) {
@@ -98,6 +102,11 @@ const Register = (props) => {
       errors.password = 'Password is required';
     } else if (data.password.length < 8) {
       errors.password = 'Password must be 8 characters or more';
+    }
+    if (!data.confmpass) {
+      errors.confmpass = "Confirm Password Is Required"
+    } else if (data.password !== data.confmpass) {
+      errors.confmpass = "Confirm Password Must Be Similar To The Password"
     }
     return errors;
   };
@@ -122,7 +131,7 @@ const Register = (props) => {
             <br />
             <h2>Create An Account  <span>Already Have An Account ? <NavLink to={'/login'}>Sign In</NavLink></span></h2><br />
             <hr color='gray' />
-            {hasErrors && <p className='err-mark'>Something is missing<FaExclamationTriangle /></p>}
+            {hasErrors && <p className='err-mark'>Something is missing Please Check Previous Form Also<FaExclamationTriangle /></p>}
 
             <div className="form-cont">
 
@@ -144,7 +153,7 @@ const Register = (props) => {
                     </div>
                     <div className="col">
                       <label htmlFor="add">Address</label>
-                      <input onChange={handleInputChange} placeholder='Address' type="text" name='address' id='add' required />
+                      <input value={formData.address} onChange={handleInputChange} placeholder='Address' type="text" name='address' id='add' required />
                       {validationErrors.address && <p className='err-mark'>{validationErrors.address}&nbsp;<FaExclamationTriangle /></p>}
                     </div>
                   </div>
@@ -152,17 +161,17 @@ const Register = (props) => {
                   <div className="row">
                     <div className="col">
                       <label htmlFor="contct">Contact Number</label>
-                      <input onChange={handleInputChange} placeholder='Contact Number' type="tel" id='contct' name='contactNumber' required />
+                      <input value={formData.contactNumber} onChange={handleInputChange} placeholder='Contact Number' type="tel" id='contct' name='contactNumber' required />
                       {validationErrors.contactNumber && <p className='err-mark'>{validationErrors.contactNumber}&nbsp;<FaExclamationTriangle /></p>}
                     </div>
                     <div className="col">
                       <label htmlFor="dob">Date Of Birth</label>
-                      <input onChange={handleInputChange} id='dob' type="date" name='dob' required />
+                      <input value={formData.dob} onChange={handleInputChange} id='dob' type="date" name='dob' required max={"2020-01-01"} />
                       {validationErrors.dob && <p className='err-mark'>{validationErrors.dob}&nbsp;<FaExclamationTriangle /></p>}
                     </div>
                     <div className="col">
                       <label htmlFor="age">Age</label>
-                      <input onChange={handleInputChange} min={3} max={50} placeholder='Age' id='age' type="number" name='age' required />
+                      <input value={formData.age} onChange={handleInputChange} min={3} max={50} placeholder='Age' id='age' type="number" name='age' required />
                       {validationErrors.age && <p className='err-mark'>{validationErrors.age}&nbsp;<FaExclamationTriangle /></p>}
                     </div>
                   </div>
@@ -170,7 +179,7 @@ const Register = (props) => {
                   <div className="row">
                     <div className="col">
                       <label htmlFor="gender">Gender</label>
-                      <select onChange={handleInputChange} name="gender" id='gender'>
+                      <select  onChange={handleInputChange} name="gender" id='gender'>
                         <option disabled selected>Select Gender</option>
                         <option value="M">Male</option>
                         <option value="F">Female</option>
@@ -179,7 +188,7 @@ const Register = (props) => {
                     </div>
                     <div className="col2x" >
                       <label htmlFor="reach">Where did you hear about the school?</label>
-                      <input onChange={handleInputChange} placeholder='Eg Social Media' type="text" id='reach' name='reach' />
+                      <input value={formData.reach} onChange={handleInputChange} placeholder='Eg Social Media' type="text" id='reach' name='reach' />
                     </div>
 
                   </div>
@@ -194,14 +203,14 @@ const Register = (props) => {
                       </select>
                       {validationErrors.classType && <p className='err-mark'>{validationErrors.classType}&nbsp;<FaExclamationTriangle /></p>}
                     </div>
-                    {formData.classType === "Online" ? (
+                    {formData.classType === "Offline" ? (
                       <div className="col">
                         <label htmlFor="amount">Plan</label>
                         <select onChange={handleInputChange} required name="amount" id='amount'>
-                          <option value={formData.age > 10 ? 1500 : 1000} selected>1 Month</option>
-                          <option value={formData.age > 10 ? 3600 : 2500}>3 Month</option>
-                          <option value={formData.age > 10 ? 6000 : 4500}>6 Month</option>
-                          <option value={formData.age > 10 ? 11000 : 8000}>12 Month</option>
+                          <option value={formData.age > 7 ? 1500 : 1000} selected>1 Month</option>
+                          <option value={formData.age > 7 ? 3600 : 2500}>3 Month</option>
+                          <option value={formData.age > 7 ? 6000 : 4500}>6 Month</option>
+                          <option value={formData.age > 7 ? 11000 : 8000}>12 Month</option>
                         </select>
                       </div>
                     ) : null}
@@ -232,7 +241,7 @@ const Register = (props) => {
                     </div>
 
                     <div className="col">
-                      <button disabled={isDisabled} onClick={(e) => { e.preventDefault(); setFormShuffle(1) }} className='link-btns'>Next</button>
+                      <button disabled={isDisabled} onClick={(e) => { e.preventDefault();setFormShuffle(1)}} className='link-btns'>Next</button>
                     </div>
                   </div>
                 </form>
@@ -245,8 +254,22 @@ const Register = (props) => {
 
                     </div>
                     <div className="col">
+                      <label htmlFor="">Username</label>
+                      <input value={formData.username} onChange={handleInputChange} required type="text" placeholder='Username' name='username' />
+                      {validationErrors.username && <p className='err-mark'>{validationErrors.username}&nbsp;<FaExclamationTriangle /></p>}
+                    </div>
+                    <div className="col">
+
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col">
+
+                    </div>
+                    <div className="col">
                       <label htmlFor="">Email</label>
                       <input value={formData.email} onChange={handleInputChange} required type="email" placeholder='Email' name='email' />
+                      {validationErrors.email && <p className='err-mark'>{validationErrors.email}&nbsp;<FaExclamationTriangle /></p>}
                     </div>
                     <div className="col">
 
@@ -260,9 +283,10 @@ const Register = (props) => {
                     <div className="col">
                       <label htmlFor="">Password</label>
                       <div className="password-cont">
-                        <input onChange={handleInputChange} name='password' placeholder='Password' type={eyeOpen ? "password" : "text"} required />
+                        <input value={formData.password} onChange={handleInputChange} name='password' placeholder='Password' type={eyeOpen ? "password" : "text"} required />
                         <button onClick={(e) => { e.preventDefault(); setEyeOpen(!eyeOpen) }}>{eyeOpen ? <FaEye /> : <FaEyeSlash />}</button>
                       </div>
+                      {validationErrors.password && <p className='err-mark'>{validationErrors.password}&nbsp;<FaExclamationTriangle /></p>}
                     </div>
 
 
@@ -277,9 +301,10 @@ const Register = (props) => {
                     <div className="col">
                       <label htmlFor="">Confirm Password</label>
                       <div className="password-cont">
-                        <input onChange={handleInputChange} placeholder='Confirm Password' type={eyeOpen ? "password" : "text"} required />
+                        <input value={confrmPass} onChange={handleInputChange} placeholder='Confirm Password' name='confmpass' type={eyeOpen ? "password" : "text"} required />
                         <button onClick={(e) => { e.preventDefault(); setEyeOpen(!eyeOpen) }}>{eyeOpen ? <FaEye /> : <FaEyeSlash />}</button>
                       </div>
+                      {validationErrors.confmpass && <p className='err-mark'>{validationErrors.confmpass}&nbsp;<FaExclamationTriangle /></p>}
                     </div>
                     <div className="col">
                     </div>
